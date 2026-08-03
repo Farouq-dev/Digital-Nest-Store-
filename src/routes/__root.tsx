@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import SiteNotFound from "@/screens/NotFound";
 import { Toaster } from "@/components/ui/sonner";
 import { CartProvider } from "@/contexts/CartContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 function NotFoundComponent() {
   return <SiteNotFound />;
@@ -128,10 +129,12 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <CartProvider>
+      <AuthProvider>
+        <CartProvider>
         <Outlet />
         <Toaster />
-      </CartProvider>
+        </CartProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
