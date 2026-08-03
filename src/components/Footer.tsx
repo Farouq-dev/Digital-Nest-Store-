@@ -82,8 +82,8 @@ const Footer = () => (
       <div className="container py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-primary-foreground/30">
         <p>© 2026 DigitalNest. All rights reserved.</p>
         <div className="flex gap-4">
-          <Link to="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link>
-          <Link to="/refund" className="hover:text-accent transition-colors">Refund Policy</Link>
+          <Link to="/contact" className="hover:text-accent transition-colors">Privacy Policy</Link>
+          <Link to="/contact" className="hover:text-accent transition-colors">Refund Policy</Link>
         </div>
       </div>
     </div>
