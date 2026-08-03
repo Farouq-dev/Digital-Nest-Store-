@@ -10,33 +10,207 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CoursesRouteImport } from './routes/courses'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PdfsRouteImport } from './routes/pdfs'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SultanFarouqDashboardRouteImport } from './routes/sultan-farouq-dashboard'
+import { Route as TemplatesRouteImport } from './routes/templates'
+import { Route as ProductSlugRouteImport } from './routes/product.$slug'
+import { Route as ApiPublicProductFilesSplatRouteImport } from './routes/api/public/product-files/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesRoute = CoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfsRoute = PdfsRouteImport.update({
+  id: '/pdfs',
+  path: '/pdfs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SultanFarouqDashboardRoute = SultanFarouqDashboardRouteImport.update({
+  id: '/sultan-farouq-dashboard',
+  path: '/sultan-farouq-dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemplatesRoute = TemplatesRouteImport.update({
+  id: '/templates',
+  path: '/templates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductSlugRoute = ProductSlugRouteImport.update({
+  id: '/product/$slug',
+  path: '/product/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicProductFilesSplatRoute =
+  ApiPublicProductFilesSplatRouteImport.update({
+    id: '/api/public/product-files/$',
+    path: '/api/public/product-files/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
+  '/login': typeof LoginRoute
+  '/pdfs': typeof PdfsRoute
+  '/products': typeof ProductsRoute
+  '/signup': typeof SignupRoute
+  '/sultan-farouq-dashboard': typeof SultanFarouqDashboardRoute
+  '/templates': typeof TemplatesRoute
+  '/product/$slug': typeof ProductSlugRoute
+  '/api/public/product-files/$': typeof ApiPublicProductFilesSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
+  '/login': typeof LoginRoute
+  '/pdfs': typeof PdfsRoute
+  '/products': typeof ProductsRoute
+  '/signup': typeof SignupRoute
+  '/sultan-farouq-dashboard': typeof SultanFarouqDashboardRoute
+  '/templates': typeof TemplatesRoute
+  '/product/$slug': typeof ProductSlugRoute
+  '/api/public/product-files/$': typeof ApiPublicProductFilesSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
+  '/login': typeof LoginRoute
+  '/pdfs': typeof PdfsRoute
+  '/products': typeof ProductsRoute
+  '/signup': typeof SignupRoute
+  '/sultan-farouq-dashboard': typeof SultanFarouqDashboardRoute
+  '/templates': typeof TemplatesRoute
+  '/product/$slug': typeof ProductSlugRoute
+  '/api/public/product-files/$': typeof ApiPublicProductFilesSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/cart'
+    | '/contact'
+    | '/courses'
+    | '/login'
+    | '/pdfs'
+    | '/products'
+    | '/signup'
+    | '/sultan-farouq-dashboard'
+    | '/templates'
+    | '/product/$slug'
+    | '/api/public/product-files/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/cart'
+    | '/contact'
+    | '/courses'
+    | '/login'
+    | '/pdfs'
+    | '/products'
+    | '/signup'
+    | '/sultan-farouq-dashboard'
+    | '/templates'
+    | '/product/$slug'
+    | '/api/public/product-files/$'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/cart'
+    | '/contact'
+    | '/courses'
+    | '/login'
+    | '/pdfs'
+    | '/products'
+    | '/signup'
+    | '/sultan-farouq-dashboard'
+    | '/templates'
+    | '/product/$slug'
+    | '/api/public/product-files/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  CartRoute: typeof CartRoute
+  ContactRoute: typeof ContactRoute
+  CoursesRoute: typeof CoursesRoute
+  LoginRoute: typeof LoginRoute
+  PdfsRoute: typeof PdfsRoute
+  ProductsRoute: typeof ProductsRoute
+  SignupRoute: typeof SignupRoute
+  SultanFarouqDashboardRoute: typeof SultanFarouqDashboardRoute
+  TemplatesRoute: typeof TemplatesRoute
+  ProductSlugRoute: typeof ProductSlugRoute
+  ApiPublicProductFilesSplatRoute: typeof ApiPublicProductFilesSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +222,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses': {
+      id: '/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof CoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdfs': {
+      id: '/pdfs'
+      path: '/pdfs'
+      fullPath: '/pdfs'
+      preLoaderRoute: typeof PdfsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sultan-farouq-dashboard': {
+      id: '/sultan-farouq-dashboard'
+      path: '/sultan-farouq-dashboard'
+      fullPath: '/sultan-farouq-dashboard'
+      preLoaderRoute: typeof SultanFarouqDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/templates': {
+      id: '/templates'
+      path: '/templates'
+      fullPath: '/templates'
+      preLoaderRoute: typeof TemplatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/$slug': {
+      id: '/product/$slug'
+      path: '/product/$slug'
+      fullPath: '/product/$slug'
+      preLoaderRoute: typeof ProductSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/product-files/$': {
+      id: '/api/public/product-files/$'
+      path: '/api/public/product-files/$'
+      fullPath: '/api/public/product-files/$'
+      preLoaderRoute: typeof ApiPublicProductFilesSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  CartRoute: CartRoute,
+  ContactRoute: ContactRoute,
+  CoursesRoute: CoursesRoute,
+  LoginRoute: LoginRoute,
+  PdfsRoute: PdfsRoute,
+  ProductsRoute: ProductsRoute,
+  SignupRoute: SignupRoute,
+  SultanFarouqDashboardRoute: SultanFarouqDashboardRoute,
+  TemplatesRoute: TemplatesRoute,
+  ProductSlugRoute: ProductSlugRoute,
+  ApiPublicProductFilesSplatRoute: ApiPublicProductFilesSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
