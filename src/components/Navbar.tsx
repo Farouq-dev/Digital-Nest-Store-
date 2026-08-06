@@ -56,7 +56,7 @@ const Navbar = () => {
               </span>
             )}
           </Link>
-
+          <ThemeToggle />
         </div>
 
         {/* Mobile toggle */}
@@ -73,6 +73,8 @@ const Navbar = () => {
               </span>
             )}
           </Link>
+          <ThemeToggle />
+
 
           <button
             className="text-foreground"
