@@ -24,7 +24,7 @@ const Footer = () => {
   return (
 
   <footer className="border-t border-border bg-primary relative overflow-hidden">
-    <div className="absolute inset-0 animate-[orange-glow-pulse_3s_ease-in-out_infinite] bg-[radial-gradient(ellipse_at_center,_hsl(30_80%_55%/0.35)_0%,_hsl(30_80%_55%/0.1)_40%,_transparent_70%)]" />
+    <div className="pointer-events-none absolute inset-0 animate-[orange-glow-pulse_3s_ease-in-out_infinite] bg-[radial-gradient(ellipse_at_center,_hsl(30_80%_55%/0.35)_0%,_hsl(30_80%_55%/0.1)_40%,_transparent_70%)]" />
     <div className="container py-12">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Left — Logo & tagline */}
