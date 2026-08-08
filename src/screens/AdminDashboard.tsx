@@ -17,6 +17,7 @@ import {
   adminUnlock,
   adminUpdateProduct,
 } from "@/lib/admin.functions";
+import { LOCKED_MESSAGE, useAdminLockout } from "@/hooks/useAdminLockout";
 
 type Product = {
   id: string;
