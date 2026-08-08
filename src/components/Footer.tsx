@@ -18,8 +18,24 @@ const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
 ];
 
+const DOUBLE_TAP_MS = 400;
+
 const Footer = () => {
   const [accessOpen, setAccessOpen] = useState(false);
+  const lastTap = useRef(0);
+
+  // Mobile browsers don't fire dblclick reliably on text nodes, so detect a
+  // double tap manually. Single taps/clicks intentionally do nothing.
+  const handleTouchEnd = () => {
+    const now = Date.now();
+    if (now - lastTap.current < DOUBLE_TAP_MS) {
+      lastTap.current = 0;
+      setAccessOpen(true);
+    } else {
+      lastTap.current = now;
+    }
+  };
+
 
   return (
 

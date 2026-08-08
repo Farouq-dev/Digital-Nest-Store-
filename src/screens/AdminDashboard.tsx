@@ -53,18 +53,28 @@ const emptyForm: ProductForm = {
 function AccessGate({ onUnlocked }: { onUnlocked: () => void }) {
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
-  const { locked, registerFailure } = useAdminLockout();
+  const [error, setError] = useState<string | null>(null);
+  const { locked, registerFailure, reset } = useAdminLockout();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (locked) return;
+    if (locked || busy) return;
+    const candidate = password.trim();
+    if (!candidate) return;
     setBusy(true);
+    setError(null);
     try {
-      const { ok } = await adminUnlock({ data: { password } });
-      if (ok) onUnlocked();
-      else toast.error(registerFailure());
+      const { ok } = await adminUnlock({ data: { password: candidate } });
+      if (ok) {
+        reset();
+        onUnlocked();
+        return;
+      }
+      const message = registerFailure();
+      setError(message);
+      toast.error(message);
     } catch {
-      toast.error("Something went wrong");
+      setError("Something went wrong. Please try again.");
     }
     setPassword("");
     setBusy(false);
@@ -77,7 +87,7 @@ function AccessGate({ onUnlocked }: { onUnlocked: () => void }) {
           {LOCKED_MESSAGE}
         </p>
       ) : (
-        <form onSubmit={submit} className="w-full max-w-xs space-y-3">
+        <form onSubmit={submit} className="w-full max-w-xs space-y-3" noValidate>
           <Input
             type="password"
             autoComplete="current-password"
@@ -85,8 +95,13 @@ function AccessGate({ onUnlocked }: { onUnlocked: () => void }) {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             aria-label="Password"
+            aria-invalid={error ? true : undefined}
+            disabled={busy}
           />
-          <Button type="submit" className="w-full" disabled={busy || !password}>
+          <p aria-live="polite" className="min-h-[1rem] font-body text-xs text-destructive">
+            {error}
+          </p>
+          <Button type="submit" className="w-full" disabled={busy || !password.trim()}>
             {busy ? "Signing in…" : "Sign In"}
           </Button>
         </form>
@@ -94,6 +109,7 @@ function AccessGate({ onUnlocked }: { onUnlocked: () => void }) {
     </div>
   );
 }
+
 
 function DashboardPanel({ onLock }: { onLock: () => void }) {
   const [products, setProducts] = useState<Product[]>([]);
