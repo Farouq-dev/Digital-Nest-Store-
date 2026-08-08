@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Instagram, Twitter, Facebook, Mail } from "lucide-react";
 import HiddenAccessModal from "./HiddenAccessModal";
