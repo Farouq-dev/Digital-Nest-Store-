@@ -52,14 +52,16 @@ const emptyForm: ProductForm = {
 function AccessGate({ onUnlocked }: { onUnlocked: () => void }) {
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
+  const { locked, registerFailure } = useAdminLockout();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (locked) return;
     setBusy(true);
     try {
       const { ok } = await adminUnlock({ data: { password } });
       if (ok) onUnlocked();
-      else toast.error("Incorrect key");
+      else toast.error(registerFailure());
     } catch {
       toast.error("Something went wrong");
     }
@@ -69,19 +71,25 @@ function AccessGate({ onUnlocked }: { onUnlocked: () => void }) {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-6">
-      <form onSubmit={submit} className="w-full max-w-xs space-y-3">
-        <Input
-          type="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Access key"
-          aria-label="Access key"
-        />
-        <Button type="submit" className="w-full" disabled={busy || !password}>
-          {busy ? "Checking…" : "Continue"}
-        </Button>
-      </form>
+      {locked ? (
+        <p className="max-w-xs text-center font-body text-sm text-muted-foreground">
+          {LOCKED_MESSAGE}
+        </p>
+      ) : (
+        <form onSubmit={submit} className="w-full max-w-xs space-y-3">
+          <Input
+            type="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            aria-label="Password"
+          />
+          <Button type="submit" className="w-full" disabled={busy || !password}>
+            {busy ? "Signing in…" : "Sign In"}
+          </Button>
+        </form>
+      )}
     </div>
   );
 }
