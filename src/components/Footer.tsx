@@ -102,9 +102,14 @@ const Footer = () => {
     {/* Bottom bar */}
     <div className="border-t border-primary-foreground/10">
       <div className="container py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-primary-foreground/30">
-        <p onDoubleClick={() => setAccessOpen(true)} className="select-none">
+        <p
+          onDoubleClick={() => setAccessOpen(true)}
+          onTouchEnd={handleTouchEnd}
+          className="select-none"
+        >
           © DigitalNest Store 2026
         </p>
+
         <div className="flex gap-4">
           <Link to="/contact" className="hover:text-accent transition-colors">Privacy Policy</Link>
           <Link to="/contact" className="hover:text-accent transition-colors">Refund Policy</Link>
