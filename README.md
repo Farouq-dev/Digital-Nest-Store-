@@ -1,18 +1,18 @@
-DigitalNest Store
+# DigitalNest Store
 
 DigitalNest Store is a modern e-commerce web application designed and developed independently by Sultan Umar Farouq.
 
-The project was built to demonstrate practical experience in web development, user interface design, responsive development, authentication, application architecture, and e-commerce functionality.
+The project was built to demonstrate practical experience in web development, user interface design, responsive development, application architecture, and e-commerce functionality.
 
-Overview
+## Overview
 
-DigitalNest Store provides a clean and responsive shopping experience focused on straightforward navigation, product discovery, and usability across different devices.
+DigitalNest Store provides a clean and responsive shopping experience focused on straightforward navigation, product discovery, usability, and a consistent experience across different devices.
 
-The project includes a customer-facing storefront and a protected administrative dashboard for managing the application.
+The application was developed as a complete e-commerce project, covering both the customer experience and the underlying application structure required to support the platform.
 
-Key Features
+## Key Features
 
-Storefront
+### Storefront
 
 - Responsive e-commerce interface
 - Product browsing and categorization
@@ -24,26 +24,15 @@ Storefront
 - Social media integration
 - Clean and consistent user interface
 
-Administration and Authentication
-
-- Protected administrative dashboard
-- Custom administrative route
-- Authentication-protected access
-- Password-based authentication
-- Failed-login attempt handling
-- Protected dashboard routes
-- Custom 404 handling
-- Secure logout and authentication state management
-
-Design and Development
+## Design and Development
 
 The application was designed with an emphasis on simplicity, consistency, responsiveness, and usability.
 
 I was responsible for the project's overall concept, design direction, feature planning, implementation, debugging, testing, and refinement.
 
-The development process involved making decisions about application structure, user experience, navigation, authentication, responsive behavior, and error handling.
+The development process involved making decisions about application structure, user experience, navigation, responsive behavior, application logic, and error handling.
 
-Technical Experience Demonstrated
+## Technical Experience Demonstrated
 
 Through this project, I developed practical experience with:
 
@@ -51,7 +40,6 @@ Through this project, I developed practical experience with:
 - Responsive UI development
 - Component-based architecture
 - Routing and navigation
-- Authentication and protected routes
 - State management
 - Form handling
 - Error handling
@@ -62,7 +50,7 @@ Through this project, I developed practical experience with:
 
 AI-assisted development tools were used during parts of the development process. However, the application's direction, requirements, design decisions, customization, testing, debugging, and final implementation were managed by me.
 
-Responsive Design
+## Responsive Design
 
 DigitalNest Store was developed to provide a consistent experience across:
 
@@ -72,22 +60,22 @@ DigitalNest Store was developed to provide a consistent experience across:
 
 The interface was tested and refined with responsive layouts and different screen sizes in mind.
 
-Purpose
+## Purpose
 
 I built DigitalNest Store to gain practical experience developing a complete application rather than focusing only on isolated programming exercises or tutorials.
 
-The project allowed me to apply programming and development concepts to a realistic product involving interface design, application logic, authentication, responsive development, debugging, and deployment considerations.
+The project allowed me to apply programming and development concepts to a realistic product involving interface design, application logic, responsive development, debugging, and deployment considerations.
 
-Developer
+## Developer
 
-Sultan Umar Farouq
+**Sultan Umar Farouq**
 
 Student and aspiring Electrical and Electronics Engineer with interests in software development, embedded systems, programming, and technology.
 
-Project Status
+## Project Status
 
 Completed and maintained as part of my software development portfolio.
 
-License
+## License
 
 This project is a personal portfolio project. The source code, design, and content may not be reproduced, redistributed, or presented as another person's work without permission.
