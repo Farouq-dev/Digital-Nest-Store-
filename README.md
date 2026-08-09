@@ -68,7 +68,7 @@ The project allowed me to apply programming and development concepts to a realis
 
 ## Developer
 
-**Sultan Umar Farouq**
+**Umar Farouq Nurudeen**
 
 Student and aspiring Electrical and Electronics Engineer with interests in software development, embedded systems, programming, and technology.
 
