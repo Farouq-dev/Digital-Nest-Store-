@@ -1,6 +1,6 @@
 # DigitalNest Store
 
-DigitalNest Store is a modern e-commerce web application designed and developed independently by Sultan Umar Farouq.
+DigitalNest Store is a modern e-commerce web application designed and developed independently by Umar Farouq Nurudeen.
 
 The project was built to demonstrate practical experience in web development, user interface design, responsive development, application architecture, and e-commerce functionality.
 
